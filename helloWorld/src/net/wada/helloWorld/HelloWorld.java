@@ -9,7 +9,6 @@ public class HelloWorld {
 		System.out.println("Hello Git!!!");
 		System.out.println("Hello Github!!!");
 		System.out.println("Hello Java!!!");
-		System.out.println("Hello Hoge!!!");
 	}
 
 }
