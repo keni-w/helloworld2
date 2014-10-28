@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset='UTF-8'>
+<link rel="stylesheet" href="./css/common.css" />
+<link rel="stylesheet" href="./css/lightbox.css" />
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+<script type="text/javascript" src="./js/common.js"></script>
+<script type="text/javascript" src="./js/menu.js"></script>
+<script type="text/javascript" src="./js/modernizr.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/i18n/jquery.ui.datepicker-ja.js"></script>
+<script type="text/javascript"  src="./js/lightbox.js"></script>
+<title>【コンテンツ管理】メニュー</title>
+</head>
+<body onload="onload();">
+<div id="main" class="main">
+<table class="fix">
+	<tr>
+		<td width="150">
+			&nbsp;
+		</td>
+		<td width="600" align="center">
+			<table class="main">
+				<tr>
+					<td width="400" >
+					<fieldset>
+					<legend>メニュー</legend>
+					<table>
+						<tr>
+							<td>
+							</td>						
+							<td>
+								<a href="./upload-sample.html">アップロード</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>						
+							<td>
+								<a href="./download-sample.html">検索・ダウンロード</a>
+							</td>
+						</tr>
+					</table>
+					</fieldset>
+					</td>
+				</tr>
+			</table>
+			<div id="admin" style="display: none">
+				<table>
+					<tr>
+						<td width="400" >
+						<fieldset>
+						<legend>管理メニュー</legend>
+						<table>
+							<tr>
+								<td>
+								</td>						
+								<td>
+									<a href="./useHistory.html">ダウンロード履歴検索</a>
+								</td>
+							</tr>
+						</table>
+						</fieldset>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<table>
+				<tr>
+					<td colspan="2" width="300">
+					</td>
+					<td colspan="2">
+						<input type="button" value="ログアウト" onclick="exeLogout();"/>
+					</td>
+				</tr>				
+			</table>
+		</td>
+		<td width="150">
+			&nbsp;
+		</td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

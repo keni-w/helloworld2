@@ -1,0 +1,53 @@
+body {
+	background-color: #D3D3D3;
+}
+div.main {
+	width: 800px;
+	margin: 20px 20px 20px 20px;
+	padding: 20px 20px 20px 20px;
+}
+div.header {
+	margin: 1px 1px 1px 1px;
+}
+div.viewer {
+	background-color: #FFFFFF;
+	width: 780px;
+	height: 420px;
+	margin: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	overflow:auto;
+}
+div.footer {
+	margin: 4px 4px 4px 4px;
+}
+div.requiredCommont {
+	font-size: 12px;
+	color: red;
+} 
+div.caption {
+	background-color: #D3D3D3;
+	text-align: right;
+	vertical-align: middle;
+}
+table.outer {
+	background-color: #D3D3D3;
+}
+td.fix {
+	width: 800px;
+}
+td.thumb {
+	vertical-align:top;
+	text-align : center;
+	padding: 1px 1px 1px 1px;
+	margin: 1px 1px 1px 1px;
+	width: 130px;
+	height: 100px;
+}
+td.hidden {
+	visibility:hidden;
+	width: 500px;
+}
+img.thumbImg {
+	width: 120px;
+	height: 90px;
+}

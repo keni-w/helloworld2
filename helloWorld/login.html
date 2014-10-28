@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset='UTF-8'>
+<link rel="stylesheet" href="./css/common.css" />
+<link rel="stylesheet" href="./css/lightbox.css" />
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+<script type="text/javascript" src="./js/common.js"></script>
+<script type="text/javascript" src="./js/login.js"></script>
+<script type="text/javascript" src="./js/modernizr.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/i18n/jquery.ui.datepicker-ja.js"></script>
+<script type="text/javascript"  src="./js/lightbox.js"></script>
+<title>【コンテンツ管理】ログイン画面</title>
+</head>
+<body onload="onload();">
+<div id="login" class="main" style="display: none">
+<table class="fix">
+	<tr>
+		<td width="150">
+			&nbsp;
+		</td>
+		<td width="600" align="center">
+			<table class="main">
+				<tr>
+					<td>
+					<fieldset>
+					<legend>ログイン情報</legend>
+					<table>
+						<tr>
+							<td>
+								<div class="caption">ユーザーID:</div>
+							</td>						
+							<td>
+								<input type="text" id="userId1" name="userId1" size="10" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="caption">パスワード:</div>
+							</td>						
+							<td>
+								<input type="password" id="password" name="password" size="20" required="required" />
+							</td>
+						</tr>
+					</table>
+					</fieldset>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="ログイン" onclick="exeLogin();"/>
+					</td>
+					<td colspan="2">
+						<input type="button" value="パスワード変更" onclick="changePassword();"/>
+					</td>
+				</tr>				
+			</table>
+		</td>
+		<td width="150">
+			&nbsp;
+		</td>
+	</tr>
+</table>
+	
+</div>
+<div id="changePassword" style="display: none">
+<table class="fix">
+	<tr>
+		<td width="150">
+			&nbsp;
+		</td>
+		<td width="600" align="center">
+			<table class="main">
+				<tr>
+					<td>
+					<fieldset>
+					<legend>パスワード変更</legend>
+					<table>
+						<tr>
+							<td>
+								<div class="caption">新パスワード:</div>
+							</td>						
+							<td>
+								<input type="password" id="newPassword" name="newPassword" size="20" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="caption">新パスワード（確認）:</div>
+							</td>						
+							<td>
+								<input type="password" id="confirmNewPassword" name="confirmNewPassword" size="20" required="required" />
+							</td>
+						</tr>
+					</table>
+					</fieldset>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td colspan="4">
+						<input type="button" value="更新" onclick="updatePassword();"/>
+					</td>
+				</tr>				
+			</table>
+		</td>
+		<td width="150">
+			&nbsp;
+		</td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

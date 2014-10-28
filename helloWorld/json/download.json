@@ -1,0 +1,183 @@
+var data = {"sample": [
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5301.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5301.JPG",
+"fileId": "IMG_5301"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5302.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5302.JPG",
+"fileId": "IMG_5302"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5303.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5303.JPG",
+"fileId": "IMG_5303"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5304.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5304.JPG",
+"fileId": "IMG_5304"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5305.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5305.JPG",
+"fileId": "IMG_5305"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5306.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5306.JPG",
+"fileId": "IMG_5306"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5362.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5362.JPG",
+"fileId": "IMG_5362"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5363.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5363.JPG",
+"fileId": "IMG_5363"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5364.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5364.JPG",
+"fileId": "IMG_5364"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5365.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5365.JPG",
+"fileId": "IMG_5365"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5366.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5366.JPG",
+"fileId": "IMG_5366"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5367.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5367.JPG",
+"fileId": "IMG_5367"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5472.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5472.JPG",
+"fileId": "IMG_5472"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5473.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5473.JPG",
+"fileId": "IMG_5473"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5480.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5480.JPG",
+"fileId": "IMG_5480"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5481.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5481.JPG",
+"fileId": "IMG_5481"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5482.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5482.JPG",
+"fileId": "IMG_5482"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5483.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5483.JPG",
+"fileId": "IMG_5483"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5585.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5585.JPG",
+"fileId": "IMG_5585"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5590.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5590.JPG",
+"fileId": "IMG_5590"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5593.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5593.JPG",
+"fileId": "IMG_5593"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5594.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5594.JPG",
+"fileId": "IMG_5594"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5595.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5595.JPG",
+"fileId": "IMG_5595"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_5596.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_5596.JPG",
+"fileId": "IMG_5596"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6318.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6318.JPG",
+"fileId": "IMG_6318"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6326.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6326.JPG",
+"fileId": "IMG_6326"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6328.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6328.JPG",
+"fileId": "IMG_6328"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6329.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6329.JPG",
+"fileId": "IMG_6329"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6335.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6335.JPG",
+"fileId": "IMG_6335"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6336.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6336.JPG",
+"fileId": "IMG_6336"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6406.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6406.JPG",
+"fileId": "IMG_6406"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6407.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6407.JPG",
+"fileId": "IMG_6407"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6409.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6409.JPG",
+"fileId": "IMG_6409"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6410.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6410.JPG",
+"fileId": "IMG_6410"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6412.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6412.JPG",
+"fileId": "IMG_6412"
+},
+{
+"thumb": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/Thumb_IMG_6413.JPG",
+"org": "https://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/photo/IMG_6413.JPG",
+"fileId": "IMG_6413"
+}
+]} 
+
