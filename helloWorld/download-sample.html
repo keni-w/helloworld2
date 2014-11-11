@@ -4,10 +4,12 @@
 <meta charset='UTF-8'>
 <link rel="stylesheet" href="./css/common.css" />
 <link rel="stylesheet" href="./css/lightbox.css" />
+<link rel="stylesheet" href="./css/bootstrap.min.css" >
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
 <script type="text/javascript" src="./js/common.js"></script>
 <script type="text/javascript" src="./js/download-sample.js"></script>
 <script type="text/javascript" src="./js/modernizr.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/i18n/jquery.ui.datepicker-ja.js"></script>
@@ -15,186 +17,189 @@
 <script src="http://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/download.json"></script>
 <title>【コンテンツ管理】検索・ダウンロード画面</title>
 </head>
-<body onload="onload();">
-<div id='header'>
-<table>
-	<tr>
-		<td class="fix">
-			<table>
-				<tr>
-					<td>
-						<input type="radio" id="radio" name="radio" value="1" onchange="onchangeRadio();" checked>タグ情報から検索
-						<input type="radio" id="radio" name="radio" value="2" onchange="onchangeRadio();">利用履歴情報から検索
-					</td>
-				</tr>
-			</table>
-			<div id="searchTag">
-				<fieldset>
-				<legend>タグ情報</legend>
-				<table>
-					<tr>
-						<td>
-						<div class="caption">日付:</div>
-						</td>
-						<td>
-						<input type="date" name="date1"  id="date1" min="2014-01-01" max='9999-12-31' value="2014-10-24" required/>
-						</td>
-						
-						<td>
-						<div class="caption">競輪場:</div>
-						</td>
-						<td>
-							<select id="bank" required>
-								<option value="11">函館</option>
-								<option value="12">青森</option>
-								<option value="13">いわき平</option>
-								<option value="21">弥彦</option>
-								<option value="22">前橋</option>
-								<option value="23">取手</option>
-								<option value="24">宇都宮</option>
-								<option value="25">大宮</option>
-								<option value="26">西武園</option>
-								<option value="27">京王閣</option>
-								<option value="28">立川</option>
-								<option value="31">松戸</option>
-								<option value="32">千葉</option>
-								<option value="34">川崎</option>
-								<option value="35">平塚</option>
-								<option value="36">小田原</option>
-								<option value="37">伊東</option>
-								<option value="38">静岡</option>
-								<option value="41">一宮</option>
-								<option value="42">名古屋</option>
-								<option value="43">岐阜</option>
-								<option value="44">大垣</option>
-								<option value="45">豊橋</option>
-								<option value="46">富山</option>
-								<option value="47">松阪</option>
-								<option value="48">四日市</option>
-								<option value="51">福井</option>
-								<option value="53">奈良</option>
-								<option value="54">向日町</option>
-								<option value="55">和歌山</option>
-								<option value="56">岸和田</option>
-								<option value="61">玉野</option>
-								<option value="62">広島</option>
-								<option value="63">防府</option>
-								<option value="71">高松</option>
-								<option value="73">小松島</option>
-								<option value="74">高知</option>
-								<option value="75">松山</option>
-								<option value="81">小倉</option>
-								<option value="83">久留米</option>
-								<option value="84">武雄</option>
-								<option value="85">佐世保</option>
-								<option value="86">別府</option>
-								<option value="87">熊本</option>
-								<option value="99">その他</option>
-							</select>
-						</td>
-						<td>
-						<div class="caption">選手名:</div>
-						</td>
-						<td>
-							<select id="sensyu">
-								<option value=""> </option>
-								<option value="14089">浅井　康太</option>
-								<option value="12972">金子　貴志</option>
-								<option value="12172">後閑　信一</option>
-								<option value="13393">長塚　智広</option>
-								<option value="13917">成田　和也</option>
-								<option value="14054">新田　祐大</option>
-								<option value="13841">平原　康多</option>
-								<option value="14534">深谷　知広</option>
-								<option value="12833">村上　義弘</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td><div class="caption">フリーコメント:</div></td>
-						<td colspan="4">
-						<input type="text" id="freetext" size="50"/>
-						</td>
-					</tr>
-				</table>
-				</fieldset>
-			</div>
-			<div id="searchHis" style="display: none">
-				<fieldset>
-				<legend>利用履歴情報</legend>
-				<table>
-					<tr>
-						<td>
-						<div class="caption">利用日付:</div>
-						</td>
-						<td>
-						<input type="date" name="date2"  id="date2" min="2014-01-01" max='9999-12-31' value="2014-10-24" required/>
-						</td>
-					</tr>
-					<tr>
-						<td><div class="caption">ダウンロード時<br>コメント:</div></td>
-						<td colspan="4">
-						<input type="text" id="searchDownText" size="50"/>
-						</td>
-					</tr>
-				</table>
-				</fieldset>
-			</div>
-		</td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td>
-			<table>
-				<tr>
-					<td width="750"><input type="hidden" id="count" value="0"></td>
-					<td align="right"><input type="button" id="search" value="検索" onClick="onClickSearch();"/></td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
+<body onload="onload();" class="main">
+<div class="contents">
+<h2>検索・ダウンロード画面</h2>
+<div class="container-fluid">
+<div class="row">
+	<div class="col-xs-12">
+		<input type="radio" id="radio" name="radio" value="1" onchange="onchangeRadio();" checked>タグ情報から検索
+		<input type="radio" id="radio" name="radio" value="2" onchange="onchangeRadio();">選手情報から検索
+		<input type="radio" id="radio" name="radio" value="3" onchange="onchangeRadio();">利用履歴情報から検索
+	</div>
 </div>
-<table>
-	<tr>
-		<td class="fix">
-		<div class="viewer" id="center" style="visibility: hidden">
+<div id="searchTag">
+	<div class="row">
+		<div class="col-xs-12 col-sm-3">日付(*):
+			<input type="date" name="date"  id="date" min="2014-01-01" max='9999-12-31' value="2014-10-24" required/>
+		</div>
+		<div class="col-xs-12 col-sm-2">競輪場(*):
+			<select id="bank" required onchange="checkBank();">
+				<option value="11">函館</option>
+				<option value="12">青森</option>
+				<option value="13">いわき平</option>
+				<option value="21">弥彦</option>
+				<option value="22">前橋</option>
+				<option value="23">取手</option>
+				<option value="24">宇都宮</option>
+				<option value="25">大宮</option>
+				<option value="26">西武園</option>
+				<option value="27">京王閣</option>
+				<option value="28">立川</option>
+				<option value="31">松戸</option>
+				<option value="32">千葉</option>
+				<option value="34">川崎</option>
+				<option value="35">平塚</option>
+				<option value="36">小田原</option>
+				<option value="37">伊東</option>
+				<option value="38">静岡</option>
+				<option value="41">一宮</option>
+				<option value="42">名古屋</option>
+				<option value="43">岐阜</option>
+				<option value="44">大垣</option>
+				<option value="45">豊橋</option>
+				<option value="46">富山</option>
+				<option value="47">松阪</option>
+				<option value="48">四日市</option>
+				<option value="51">福井</option>
+				<option value="53">奈良</option>
+				<option value="54">向日町</option>
+				<option value="55">和歌山</option>
+				<option value="56">岸和田</option>
+				<option value="61">玉野</option>
+				<option value="62">広島</option>
+				<option value="63">防府</option>
+				<option value="71">高松</option>
+				<option value="73">小松島</option>
+				<option value="74">高知</option>
+				<option value="75">松山</option>
+				<option value="81">小倉</option>
+				<option value="83">久留米</option>
+				<option value="84">武雄</option>
+				<option value="85">佐世保</option>
+				<option value="86">別府</option>
+				<option value="87">熊本</option>
+				<option value="00">競輪学校</option>
+				<option value="99">その他</option>
+			</select>
+		</div>
+		<div class="col-xs-12 col-sm-2" id="raceArea1">日：
+			<select id="days">
+				<option value=""> </option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+		</div>
+	</div>
+	<div class="row">			
+		<div class="col-xs-12 col-sm-2" id="raceArea2">レース：
+			<select id="races">
+				<option value=""> </option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+		</div>
+		<div class="col-xs-12 col-sm-3" id="raceArea3">出場選手：
+		<select id="sensyu">
+			<option value=""> </option>
+			<option value="14089">浅井　康太</option>
+			<option value="12972">金子　貴志</option>
+			<option value="12172">後閑　信一</option>
+			<option value="13393">長塚　智広</option>
+			<option value="13917">成田　和也</option>
+			<option value="14054">新田　祐大</option>
+			<option value="13841">平原　康多</option>
+			<option value="14534">深谷　知広</option>
+			<option value="12833">村上　義弘</option>
+		</select>
+		</div>
+		<div class="col-xs-12 col-sm-3" id="enrollArea" style="visibility: hidden">
+			入学期:<input type="number" id="enroll" min="100" max="999" step="1"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			フリーコメント:<input type="text" id="freetext" size="40" maxlength="50"/>
+		</div>
+	</div>
+</div>
+<div id="searchRacer" style="display: none">
+	<div class="row">
+			<div class="col-xs-12 col-sm-3">選手番号:
+				<input type="text" name="r-id" required/>
+			</div>
+			<div class="col-xs-12 col-sm-5">氏名:
+				<input type="text" id="name" size="20"/>&nbsp;
+				<input type="text" id="name2" size="20"/>
+			</div>
+			<div class="col-xs-12 col-sm-2" >卒期:
+				<input type="number" id="graduationNumber" min="0" max="999" step="1"/>
+			</div>
+	</div>
+</div>
+<div id="searchHis" style="display: none">
+	<div class="row">
+		<div class="col-xs-12 col-sm-3">利用日付:
+			<input type="date" name="date2"  id="date2" min="2014-01-01" max='9999-12-31' value="2014-10-24" required/>
+		</div>
+		<div class="col-xs-12 col-sm-4">ダウンロード時コメント:
+			<input type="text" id="searchDownText" size="50"/>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 pull-right">
+		<input type="hidden" id="count" value="0">
+		<input type="button" id="search" class="btn btn-primary btn-sm" value="検索" onClick="onClickSearch();"/>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12  col-sm-8">
+		<div class="viewer2" id="downloadPic" style="visibility: hidden">
 			<table class="viewer">
 				<tbody>
-				<tr>
-					<td></td>
-				</tr>
+					<tr>
+						<td></td>
+					</tr>
 				</tbody>
-			</table> 
+			</table>
 		</div>
-		</td>
-	</tr>
-</table>
-<div class="footer">
-<table>
-	<tr>
-		<td class="fix">
-		<table class="outer">
-			<tr>
-				<td><div class="caption">ダウンロードコメント:</div></td>
-				<td width="550"><input type="text" id="downloadText" size="50" required /></td>
-				<td align="right"><input type="button" id="download" value="ダウンロード" onClick="onClickDown();"/></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td class="fix">
-		<table class="outer">
-			<tr>
-				<td class="left"><input type="button" id="exit" value="メニューに戻る" onClick="onClickExit();"/></td>
-				<td width="550" colspan="2">&nbsp;</td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12  col-sm-8">ダウンロードコメント:
+		<select id="downTag">
+			<option value="1">赤競利用</option>
+			<option value="2">プロスポーツ利用</option>
+			<option value="3">Webサイト利用</option>
+			<option value="3">外部提供</option>
+			<option value="4">その他</option>
+		</select>
+		<input type="text" id="downloadText" size="50" required />
+	</div>
+	<div class="col-xs-12  col-sm-4">
+		<input type="button" id="download" class="btn btn-primary"  value="ダウンロード" onClick="onClickDown();"/>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12  col-sm-2">
+		<input type="button" class="btn btn-primary btn-sm" id="exit" value="メニューに戻る" onClick="onClickExit();"/>
+	</div>
+</div>
+</div>
 </div>
 </body>
 </html>

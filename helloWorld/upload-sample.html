@@ -4,10 +4,12 @@
 <meta charset='UTF-8'>
 <link rel="stylesheet" href="./css/common.css" />
 <link rel="stylesheet" href="./css/lightbox.css" />
+<link rel="stylesheet" href="./css/bootstrap.min.css" >
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
 <script type="text/javascript" src="./js/common.js"></script>
 <script type="text/javascript" src="./js/upload-sample.js"></script>
 <script type="text/javascript" src="./js/modernizr.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/i18n/jquery.ui.datepicker-ja.js"></script>
@@ -15,142 +17,167 @@
 <script src="http://s3-ap-northeast-1.amazonaws.com/s3-upload-test-wada/image.json"></script>
 <title>【コンテンツ管理】アップロード画面</title>
 </head>
-<body onload="onload();">
-<div id='header'>
-<table>
-	<tr>
-		<td class="fix">
-			<fieldset>
-			<legend>タグ情報</legend>
-			<table>
-				<tr>
-					<td>
-					<div class="caption">日付(*):</div>
-					</td>
-					<td>
-					<input type="date" name="date"  id="date" min="2014-01-01" max='9999-12-31' value="2014-10-24" required/>
-					</td>
-					
-					<td>
-					<div class="caption">競輪場(*):</div>
-					</td>
-					<td>
-						<select id="bank" required>
-							<option value="11">函館</option>
-							<option value="12">青森</option>
-							<option value="13">いわき平</option>
-							<option value="21">弥彦</option>
-							<option value="22">前橋</option>
-							<option value="23">取手</option>
-							<option value="24">宇都宮</option>
-							<option value="25">大宮</option>
-							<option value="26">西武園</option>
-							<option value="27">京王閣</option>
-							<option value="28">立川</option>
-							<option value="31">松戸</option>
-							<option value="32">千葉</option>
-							<option value="34">川崎</option>
-							<option value="35">平塚</option>
-							<option value="36">小田原</option>
-							<option value="37">伊東</option>
-							<option value="38">静岡</option>
-							<option value="41">一宮</option>
-							<option value="42">名古屋</option>
-							<option value="43">岐阜</option>
-							<option value="44">大垣</option>
-							<option value="45">豊橋</option>
-							<option value="46">富山</option>
-							<option value="47">松阪</option>
-							<option value="48">四日市</option>
-							<option value="51">福井</option>
-							<option value="53">奈良</option>
-							<option value="54">向日町</option>
-							<option value="55">和歌山</option>
-							<option value="56">岸和田</option>
-							<option value="61">玉野</option>
-							<option value="62">広島</option>
-							<option value="63">防府</option>
-							<option value="71">高松</option>
-							<option value="73">小松島</option>
-							<option value="74">高知</option>
-							<option value="75">松山</option>
-							<option value="81">小倉</option>
-							<option value="83">久留米</option>
-							<option value="84">武雄</option>
-							<option value="85">佐世保</option>
-							<option value="86">別府</option>
-							<option value="87">熊本</option>
-							<option value="99">その他</option>
-						</select>
-					</td>
-					<td>
-					<div class="caption">選手名:</div>
-					</td>
-					<td>
-						<select id="sensyu">
-							<option value=""> </option>
-							<option value="14089">浅井　康太</option>
-							<option value="12972">金子　貴志</option>
-							<option value="12172">後閑　信一</option>
-							<option value="13393">長塚　智広</option>
-							<option value="13917">成田　和也</option>
-							<option value="14054">新田　祐大</option>
-							<option value="13841">平原　康多</option>
-							<option value="14534">深谷　知広</option>
-							<option value="12833">村上　義弘</option>
-						</select>
-					</td>
-					<td><div class="requiredCommont">*付の項目は必ず入力してください。</div></td>
-				</tr>
-				<tr>
-					<td><div class="caption">フリーコメント:</div></td>
-					<td colspan="4">
-					<input type="text" id="freetext" size="50"/>
-					</td>
-					<td colspan="2">
-						<input type="file" id="file-chooser" multiple="multiple" accept="image/jpeg"/>
-					</td>
-				</tr>
-			</table>
-			</fieldset>
-		</td>
-	</tr>
-</table>
-</div>
-<br />
-<br />
-<table>
-	<tr>
-		<td class="fix">
-		<div class="viewer" id="center" style="visibility: hidden">
-			<table class="viewer">
-				<tbody>
-				<tr>
-					<td></td>
-				</tr>
-				</tbody>
-			</table> 
+<body onload="onload();" class="main">
+<div class="contents">
+<h2>★アップロード画面★</h2>
+<div class="container-fluid">
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<div class="row">
+			<div class="col-xs-12 col-sm-5">日付(*):
+				<input type="date" name="date"  id="date" min="2014-01-01" max='9999-12-31' value="2014-10-24" required/>
+			</div>
+			<div class="col-xs-12 col-sm-4">競輪場(*):
+			<select id="bank" required onchange="checkBank();">
+				<option value="11">函館</option>
+				<option value="12">青森</option>
+				<option value="13">いわき平</option>
+				<option value="21">弥彦</option>
+				<option value="22">前橋</option>
+				<option value="23">取手</option>
+				<option value="24">宇都宮</option>
+				<option value="25">大宮</option>
+				<option value="26">西武園</option>
+				<option value="27">京王閣</option>
+				<option value="28">立川</option>
+				<option value="31">松戸</option>
+				<option value="32">千葉</option>
+				<option value="34">川崎</option>
+				<option value="35">平塚</option>
+				<option value="36">小田原</option>
+				<option value="37">伊東</option>
+				<option value="38">静岡</option>
+				<option value="41">一宮</option>
+				<option value="42">名古屋</option>
+				<option value="43">岐阜</option>
+				<option value="44">大垣</option>
+				<option value="45">豊橋</option>
+				<option value="46">富山</option>
+				<option value="47">松阪</option>
+				<option value="48">四日市</option>
+				<option value="51">福井</option>
+				<option value="53">奈良</option>
+				<option value="54">向日町</option>
+				<option value="55">和歌山</option>
+				<option value="56">岸和田</option>
+				<option value="61">玉野</option>
+				<option value="62">広島</option>
+				<option value="63">防府</option>
+				<option value="71">高松</option>
+				<option value="73">小松島</option>
+				<option value="74">高知</option>
+				<option value="75">松山</option>
+				<option value="81">小倉</option>
+				<option value="83">久留米</option>
+				<option value="84">武雄</option>
+				<option value="85">佐世保</option>
+				<option value="86">別府</option>
+				<option value="87">熊本</option>
+				<option value="00">競輪学校</option>
+				<option value="99">その他</option>
+			</select>
+			</div>
 		</div>
-		</td>
-	</tr>
-</table>
-<br />
-<br />
-<div class="footer">
-<table>
-	<tr>
-		<td class="fix">
-		<table class="outer">
-			<tr>
-				<td class="left"><input type="button" id="exit" value="メニューに戻る" onClick="onClickExit();"/></td>
-				<td class="hidden"><input type="hidden" id="flg" value="0"></td>
-				<td align="right"><input type="button" id="cancel" value="キャンセル" onClick="onClickCancel();" disabled="disabled"/></td>
-				<td align="right"><input type="button" id="upload" value="アップロード" onClick="onClickUpload();"/></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-</table>
+		<div class="row" id="raceArea">
+			<div class="col-xs-12 col-sm-3">日：
+			<select id="days">
+				<option value=""> </option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			</div>
+			<div class="col-xs-12 col-sm-3">レース：
+			<select id="races">
+				<option value=""> </option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<div class="requiredCommont">*付の項目は必須入力</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-10" id="enrollArea" style="visibility: hidden">
+				入学期:<input type="number" id="enroll" min="100" max="999" step="1"/>
+			</div>
+			<div class="col-xs-12 col-sm-2 pull-right">
+				<input type="button" id="search" class="btn btn-primary btn-sm" value="検索" onClick="onClickSearch();"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="list" class="list panel panel-default table-responsive" style="visibility: hidden">
+					<table class="list table table-bordered table-striped table-condensed">
+						<tbody>
+						<tr>
+							<th></th>
+							<th>競輪場</th>
+							<th>開催日</th>
+							<th>R</th>
+							<th>選手</th>
+						</tr>
+							<tr>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="file" id="file-chooser" webkitdirectory directory accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+				<button class="btn btn-primary" onclick="$('input[id=file-chooser]').click();">ファイル選択</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="viewer list panel panel-default table-responsive" id="fileList" style="visibility: hidden"></div>
+			</div>
+		</div>		
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-sm-6 col-sm-push-6">
+		フリーコメント:<input type="text" id="freetext" size="40" maxlength="50"/>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-sm-push-6">
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-xs-12 col-sm-6 col-sm-push-6">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-sm-push-6 pull-center">
+				<input type="hidden" id="count" value="0">
+				<input type="hidden" id="countFile" value="0">
+				<input type="button" class="btn btn-primary" id="upload" value="アップロード" onClick="onClickUpload();"/>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-sm-pull-6 pull-center">
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-sm-pull-6">
+		<input type="button" class="btn btn-primary btn-sm" id="exit" value="メニューに戻る" onClick="onClickExit();"/>
+	</div>
+</div>
+</div>
 </div>
 </body>
 </html>

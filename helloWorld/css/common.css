@@ -1,8 +1,15 @@
-body {
-	background-color: #D3D3D3;
+body.main {
+background-color: rgba(211, 211, 211, 1);
+}
+*[required],
+.required{
+background-color: rgba(255, 221, 221, 0.7);
+}
+*[required].dealed,
+.required.dealed{
+background-color: rgba(223, 240, 216, 1);
 }
 div.main {
-	width: 800px;
 	margin: 20px 20px 20px 20px;
 	padding: 20px 20px 20px 20px;
 }
@@ -11,10 +18,24 @@ div.header {
 }
 div.viewer {
 	background-color: #FFFFFF;
-	width: 780px;
-	height: 420px;
 	margin: 1px 1px 1px 1px;
 	padding: 1px 1px 1px 1px;
+	height: 540px;
+	overflow:auto;
+}
+div.viewer2 {
+	background-color: #FFFFFF;
+	margin: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	height: 420px;
+	overflow:auto;
+}
+div.list {
+	border-width: 10px;
+	border-color: #FFFFFF;
+	margin: 2px 2px 2px 2px;
+	padding: 2px 2px 2px 2px;
+	height: 420px;
 	overflow:auto;
 }
 div.footer {
@@ -25,27 +46,21 @@ div.requiredCommont {
 	color: red;
 } 
 div.caption {
-	background-color: #D3D3D3;
 	text-align: right;
 	vertical-align: middle;
 }
 table.outer {
 	background-color: #D3D3D3;
 }
-td.fix {
-	width: 800px;
-}
+
 td.thumb {
 	vertical-align:top;
 	text-align : center;
 	padding: 1px 1px 1px 1px;
 	margin: 1px 1px 1px 1px;
-	width: 130px;
-	height: 100px;
 }
 td.hidden {
 	visibility:hidden;
-	width: 500px;
 }
 img.thumbImg {
 	width: 120px;

@@ -1,5 +1,5 @@
 function onClickSearch() {
-	document.getElementById('center').style.visibility = "visible";
+	document.getElementById('downloadPic').style.visibility = "visible";
 	var sensyu = document.getElementById('sensyu').value;
 	var row = 9;
 	if (sensyu != '') {
@@ -11,6 +11,7 @@ function onClickSearch() {
 			row = 2;
 		}
 	}
+    $('#downloadText').attr('readonly',false);
 	$("table.viewer tbody").html("");
     //HTMLを生成
 	var work = "";
@@ -45,19 +46,23 @@ function onClickSearch() {
     	work +=  '<td class="thumb"><a href="' + data.sample[index].org + '" rel="lightbox[group]" name="downloadImage" id="' + data.sample[index].fileId + '" >';
     	work +=  '<img class="thumbImg" src="' + data.sample[index].thumb + '" /></a></td>\n';
     }
+
     if (interruptFlg) {
     	document.getElementById('count').value = count;
     } else {
         document.getElementById('count').value = data.sample.length;
     }
+    
     work += '</tr>';
     $("table.viewer tbody").append(work);
+
 }
 function onClickDown() {
 	
 	var count = document.getElementById('count').value;
 	var checkRadio = document.getElementsByName('selectDownload');
 	var downloadImage = document.getElementsByName('downloadImage');
+
 	var text = "";
 
 	for(var i = 0; i < count; i++) {
@@ -67,24 +72,47 @@ function onClickDown() {
 		}
 	}
 	alert(text + "をダウンロードしました。" );
+	$('#downloadText').attr('readonly',true);
 }
 function onchangeRadio() {
 	var checkRadio = document.getElementsByName('radio');
 	$("table.viewer tbody").html("");
-	document.getElementById('center').style.visibility = "hidden";
+	document.getElementById('downloadPic').style.visibility = "hidden";
 	for(var i = 0; i < checkRadio.length; i++) {
 		if (checkRadio[i].checked && checkRadio[i].value == '1') {
 			document.getElementById('searchTag').style.display = '';
+			document.getElementById('searchRacer').style.display = 'none';
 			document.getElementById('searchHis').style.display = 'none';
 		} else if (checkRadio[i].checked && checkRadio[i].value == '2') {
 			document.getElementById('searchTag').style.display = 'none';
+			document.getElementById('searchRacer').style.display = '';
+			document.getElementById('searchHis').style.display = 'none';
+		} else if (checkRadio[i].checked && checkRadio[i].value == '3') {
+			document.getElementById('searchTag').style.display = 'none';
+			document.getElementById('searchRacer').style.display = 'none';
 			document.getElementById('searchHis').style.display = '';
 		}
 	}
 }
+function checkBank() {
+	var bankCd = document.getElementById('bank').value;
+	
+	if (bankCd = '00') {
+		document.getElementById('enrollArea').style.visibility = "";
+		document.getElementById('raceArea1').style.visibility = "hidden";
+		document.getElementById('raceArea2').style.visibility = "hidden";
+		document.getElementById('raceArea3').style.visibility = "hidden";
+	} else {
+		document.getElementById('enrollArea').style.visibility = "hidden";
+		document.getElementById('raceArea1').style.visibility = "";
+		document.getElementById('raceArea2').style.visibility = "";
+		document.getElementById('raceArea3').style.visibility = "";
+	}
+	
+}
 function onload() {
 	checkStorage();
-	
+	$('#downloadText').attr('readonly',true);
 	if (!Modernizr.inputtypes.date) { //HTML5のinput要素に対応しているか判定
 		jQuery('#date1').datepicker({ //していなかったらjQueryのdatepickerを該当するidのフォーム要素に適用
 			beforeShow: function(input, inst) {
